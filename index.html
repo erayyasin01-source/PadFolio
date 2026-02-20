@@ -26,24 +26,34 @@ button{cursor:pointer;}
 a{text-decoration:none;}
 
 /* ── GATE (zorunlu giriş ekranı) ─────────────────────── */
-#gate{position:fixed;inset:0;background:linear-gradient(135deg,#1a1d27 0%,#0f1117 100%);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;}
+#gate{position:fixed;inset:0;background:#000;z-index:9999;display:flex;align-items:stretch;justify-content:center;}
 #gate.gone{display:none;}
-.gate-box{background:#1e2235;border:1px solid #2e3347;border-radius:24px;padding:40px 36px;width:100%;max-width:420px;box-shadow:0 24px 64px #00000060;animation:pop .3s ease;}
-.gate-logo{font-size:28px;font-weight:800;background:linear-gradient(135deg,#5b5ef4,#0ea5e9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;margin-bottom:6px;}
-.gate-tagline{text-align:center;color:#6b7280;font-size:13px;margin-bottom:28px;}
-.gate-tabs{display:flex;background:#22263a;border-radius:10px;padding:3px;margin-bottom:24px;}
-.gate-tab{flex:1;padding:8px;border-radius:8px;font-size:13px;font-weight:600;border:none;background:none;color:#6b7280;transition:all .2s;cursor:pointer;}
-.gate-tab.active{background:#5b5ef4;color:#fff;}
+.gate-left{display:none;flex:1;background:linear-gradient(135deg,#1a0533 0%,#0a0a1a 50%,#001a33 100%);position:relative;overflow:hidden;align-items:center;justify-content:center;flex-direction:column;gap:24px;padding:60px;}
+@media(min-width:900px){.gate-left{display:flex;}}
+.gate-left-logo{font-size:52px;font-weight:900;background:linear-gradient(135deg,#5b5ef4,#0ea5e9,#22c55e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-2px;}
+.gate-left-sub{font-size:20px;color:#ffffff80;font-weight:500;text-align:center;max-width:340px;line-height:1.6;}
+.gate-left-features{display:flex;flex-direction:column;gap:16px;margin-top:20px;}
+.gate-left-feat{display:flex;align-items:center;gap:14px;color:#ffffffcc;font-size:15px;font-weight:500;}
+.gate-left-feat-icon{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#5b5ef420,#0ea5e920);border:1px solid #5b5ef440;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.gate-right{width:100%;max-width:480px;background:#000;display:flex;align-items:center;justify-content:center;padding:40px 32px;overflow-y:auto;}
+@media(min-width:900px){.gate-right{border-left:1px solid #1a1d27;}}
+.gate-box{width:100%;max-width:360px;animation:pop .3s ease;}
+.gate-logo{font-size:34px;font-weight:900;background:linear-gradient(135deg,#5b5ef4,#0ea5e9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;margin-bottom:4px;letter-spacing:-1px;}
+.gate-tagline{text-align:center;color:#6b7280;font-size:14px;margin-bottom:32px;font-weight:500;}
+.gate-tabs{display:flex;background:#111;border:1px solid #222;border-radius:12px;padding:4px;margin-bottom:28px;gap:4px;}
+.gate-tab{flex:1;padding:10px;border-radius:9px;font-size:14px;font-weight:600;border:none;background:none;color:#6b7280;transition:all .2s;cursor:pointer;}
+.gate-tab.active{background:#5b5ef4;color:#fff;box-shadow:0 2px 12px #5b5ef450;}
 .gate-form{display:none;}
 .gate-form.active{display:block;}
-.g-label{font-size:11px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;}
-.g-input{width:100%;padding:11px 13px;background:#22263a;border:1.5px solid #2e3347;border-radius:10px;color:#e8eaf6;outline:none;transition:border-color .2s;margin-bottom:12px;}
-.g-input:focus{border-color:#5b5ef4;}
-.g-input::placeholder{color:#4b5563;}
-.g-err{font-size:12px;color:#ef4444;margin-top:-8px;margin-bottom:10px;display:none;}
-.g-btn{width:100%;padding:12px;border:none;border-radius:10px;font-size:14px;font-weight:700;background:linear-gradient(135deg,#5b5ef4,#0ea5e9);color:#fff;transition:all .15s;margin-top:4px;}
-.g-btn:hover{opacity:.88;}
-.g-btn:active{transform:scale(.97);}
+.g-label{font-size:12px;font-weight:600;color:#9ca3af;margin-bottom:6px;display:block;}
+.g-input{width:100%;padding:13px 16px;background:#111;border:1.5px solid #222;border-radius:12px;color:#fff;outline:none;transition:all .2s;font-size:14px;margin-bottom:14px;}
+.g-input:focus{border-color:#5b5ef4;background:#0d0d1a;box-shadow:0 0 0 3px #5b5ef420;}
+.g-input::placeholder{color:#374151;}
+.g-err{font-size:12px;color:#ef4444;margin-top:-10px;margin-bottom:12px;display:none;padding:8px 12px;background:#ef444415;border-radius:8px;border:1px solid #ef444430;}
+.g-btn{width:100%;padding:14px;border:none;border-radius:12px;font-size:15px;font-weight:700;background:linear-gradient(135deg,#5b5ef4,#0ea5e9);color:#fff;transition:all .15s;margin-top:8px;letter-spacing:.3px;box-shadow:0 4px 20px #5b5ef440;}
+.g-btn:hover{opacity:.92;transform:translateY(-1px);box-shadow:0 6px 24px #5b5ef450;}
+.g-btn:active{transform:scale(.98);}
+.gate-terms{text-align:center;color:#4b5563;font-size:11px;margin-top:20px;line-height:1.6;}
 
 /* ── OVERLAY / MODAL ─────────────────────────────────── */
 .overlay{position:fixed;inset:0;background:#00000060;z-index:800;display:flex;align-items:center;justify-content:center;padding:16px;}
@@ -466,6 +476,9 @@ textarea.c-input{resize:none;min-height:70px;max-height:160px;line-height:1.5;}
 
   /* Announce */
   .announce{font-size:12px;padding:10px 12px;}
+
+  /* Mobil online bar */
+  #mobileOnlineBar{display:block!important;}
 }
 
 @media(max-width:400px){
@@ -480,32 +493,44 @@ textarea.c-input{resize:none;min-height:70px;max-height:160px;line-height:1.5;}
 
 <!-- ─── GATE (Zorunlu Giriş) ─────────────────────────── -->
 <div id="gate">
-  <div class="gate-box">
-    <div class="gate-logo">Padfolio</div>
-    <div class="gate-tagline">Topluluğa katıl, paylaş, keşfet 🚀</div>
-    <div id="gateLoading" style="text-align:center;color:#6b7280;font-size:12px;margin-bottom:10px;">⏳ Sunucuya bağlanılıyor...</div>
-    <div class="gate-tabs">
-      <button class="gate-tab active" onclick="switchGateTab('login')">Giriş Yap</button>
-      <button class="gate-tab" onclick="switchGateTab('register')">Kayıt Ol</button>
+  <div class="gate-left">
+    <div class="gate-left-logo">Padfolio</div>
+    <div class="gate-left-sub">Topluluğa katıl. Paylaş, keşfet, bağlan.</div>
+    <div class="gate-left-features">
+      <div class="gate-left-feat"><div class="gate-left-feat-icon">🌐</div>Herkesle içerik paylaş</div>
+      <div class="gate-left-feat"><div class="gate-left-feat-icon">💬</div>Anlık mesajlaşma</div>
+      <div class="gate-left-feat"><div class="gate-left-feat-icon">👥</div>Arkadaşlarını bul</div>
+
     </div>
-    <!-- Login -->
-    <div class="gate-form active" id="gateLogin">
-      <div class="g-label">Kullanıcı Adı</div>
-      <input class="g-input" id="gLoginUser" placeholder="kullanici_adi" autocomplete="off"/>
-      <div class="g-label">Şifre</div>
-      <input class="g-input" id="gLoginPass" type="password" placeholder="••••••••"/>
-      <div class="g-err" id="gLoginErr">Kullanıcı adı veya şifre hatalı.</div>
-      <button class="g-btn" id="gLoginBtn">Giriş Yap →</button>
-    </div>
-    <!-- Register -->
-    <div class="gate-form" id="gateRegister">
-      <div class="g-label">Kullanıcı Adı</div>
-      <input class="g-input" id="gRegUser" placeholder="kullanici_adi" maxlength="20" autocomplete="off"/>
-      <div class="g-err" id="gRegUserErr">En az 3 karakter, boşluk olmadan.</div>
-      <div class="g-label">Şifre</div>
-      <input class="g-input" id="gRegPass" type="password" placeholder="En az 6 karakter"/>
-      <div class="g-err" id="gRegPassErr">En az 6 karakter olmalı.</div>
-      <button class="g-btn" id="gRegBtn">Kayıt Ol →</button>
+  </div>
+  <div class="gate-right">
+    <div class="gate-box">
+      <div class="gate-logo">Padfolio</div>
+      <div class="gate-tagline">Hesabına giriş yap veya yeni hesap oluştur</div>
+      <div id="gateLoading" style="text-align:center;color:#6b7280;font-size:12px;margin-bottom:10px;">⏳ Bağlanılıyor...</div>
+      <div class="gate-tabs">
+        <button class="gate-tab active" onclick="switchGateTab('login')">Giriş Yap</button>
+        <button class="gate-tab" onclick="switchGateTab('register')">Hesap Oluştur</button>
+      </div>
+      <div class="gate-form active" id="gateLogin">
+        <label class="g-label">Kullanıcı Adı</label>
+        <input class="g-input" id="gLoginUser" placeholder="kullanici_adi" autocomplete="username"/>
+        <label class="g-label">Şifre</label>
+        <input class="g-input" id="gLoginPass" type="password" placeholder="••••••••" autocomplete="current-password"/>
+        <div class="g-err" id="gLoginErr">Kullanıcı adı veya şifre hatalı.</div>
+        <button class="g-btn" id="gLoginBtn">Giriş Yap</button>
+
+      </div>
+      <div class="gate-form" id="gateRegister">
+        <label class="g-label">Kullanıcı Adı</label>
+        <input class="g-input" id="gRegUser" placeholder="kullanici_adi" maxlength="20" autocomplete="username"/>
+        <div class="g-err" id="gRegUserErr">En az 3 karakter, boşluk olmadan.</div>
+        <label class="g-label">Şifre</label>
+        <input class="g-input" id="gRegPass" type="password" placeholder="En az 6 karakter" autocomplete="new-password"/>
+        <div class="g-err" id="gRegPassErr">En az 6 karakter olmalı.</div>
+        <button class="g-btn" id="gRegBtn">Hesap Oluştur</button>
+
+      </div>
     </div>
   </div>
 </div>
@@ -596,6 +621,17 @@ textarea.c-input{resize:none;min-height:70px;max-height:160px;line-height:1.5;}
   <!-- MAIN AREA -->
   <div id="mainArea">
 
+    <!-- MOBİL: Çevrimiçi & Reklam -->
+    <div id="mobileOnlineBar" style="display:none;margin-bottom:10px;">
+      <div class="card" style="margin-bottom:8px;">
+        <div class="card-hd">🟢 Çevrimiçi <span id="onlineCntMobile" style="color:var(--green);font-size:11px;text-transform:none;letter-spacing:0"></span></div>
+        <div class="online-list" id="onlineListMobile" style="display:flex;flex-wrap:nowrap;overflow-x:auto;gap:6px;padding:10px;scrollbar-width:none;"></div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:10px;margin-bottom:8px;text-align:center;">
+        <div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;font-weight:700;">Sponsorlu</div>
+        <div style="min-height:60px;background:var(--surface2);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;border:1.5px dashed var(--border);">📢 Reklam Alanı</div>
+      </div>
+    </div>
     <!-- FEED -->
     <div id="feedView">
       <div class="announce">
@@ -798,6 +834,11 @@ textarea.c-input{resize:none;min-height:70px;max-height:160px;line-height:1.5;}
 
   <!-- RIGHT SIDEBAR -->
   <div class="sr">
+    <!-- Reklam Alanı 1 -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:12px;margin-bottom:12px;text-align:center;box-shadow:var(--shadow);">
+      <div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;font-weight:700;">Sponsorlu</div>
+      <div id="adSlot1" style="min-height:90px;background:var(--surface2);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;border:1.5px dashed var(--border);">📢 Reklam Alanı</div>
+    </div>
     <div class="card">
       <div class="card-hd">🟢 Çevrimiçi <span id="onlineCnt" style="color:var(--green);font-size:11px;text-transform:none;letter-spacing:0"></span></div>
       <div class="online-list" id="onlineList"></div>
@@ -807,10 +848,25 @@ textarea.c-input{resize:none;min-height:70px;max-height:160px;line-height:1.5;}
       <div id="leaderboard"></div>
     </div>
     <div class="card" id="friendSuggestions" style="margin-top:12px;overflow:hidden;display:none"></div>
+    <!-- Reklam Alanı 2 -->
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:12px;margin-top:12px;text-align:center;box-shadow:var(--shadow);">
+      <div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;font-weight:700;">Sponsorlu</div>
+      <div id="adSlot2" style="min-height:120px;background:var(--surface2);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;border:1.5px dashed var(--border);">📢 Reklam Alanı</div>
+    </div>
   </div>
 </div>
 
 <script>
+// ─── GATE FONKSIYONLARI (erken yükleme) ─────────────────
+// ─── GATE ─────────────────────────────────────────────────
+function switchGateTab(tab){
+  document.querySelectorAll('.gate-tab').forEach(function(b,i){
+    b.classList.toggle('active', (i===0&&tab==='login')||(i===1&&tab==='register'));
+  });
+  document.getElementById('gateLogin').classList.toggle('active', tab==='login');
+  document.getElementById('gateRegister').classList.toggle('active', tab==='register');
+}
+
 // ─── Firebase dynamic import ──────────────────────────────
 var db, _col, _addDoc, _onSnapshot, _query, _orderBy, _limit,
     _serverTs, _doc, _setDoc, _getDoc, _updateDoc, _increment,
@@ -985,15 +1041,6 @@ function changeFontSize(v){ settings.fontSize = parseInt(v); saveSettings(settin
 
 applyTheme();
 applyFontSize();
-
-// ─── GATE ─────────────────────────────────────────────────
-function switchGateTab(tab){
-  document.querySelectorAll('.gate-tab').forEach(function(b,i){
-    b.classList.toggle('active', (i===0&&tab==='login')||(i===1&&tab==='register'));
-  });
-  document.getElementById('gateLogin').classList.toggle('active', tab==='login');
-  document.getElementById('gateRegister').classList.toggle('active', tab==='register');
-}
 
 function hideGate(){
   document.getElementById('gate').classList.add('gone');
@@ -1487,10 +1534,13 @@ function renderOnline(){
   updateOnlineCount();
   var now = Date.now();
   var online = allUsers.filter(function(u){ var ms=u.lastSeen&&u.lastSeen.toMillis?u.lastSeen.toMillis():0; return ms&&(now-ms<180000); }).slice(0,6);
-  document.getElementById('onlineCnt').textContent = online.length ? '('+online.length+')' : '';
-  document.getElementById('onlineList').innerHTML = online.length
+  var cnt = online.length ? '('+online.length+')' : '';
+  document.getElementById('onlineCnt').textContent = cnt;
+  var mCnt = document.getElementById('onlineCntMobile');
+  if(mCnt) mCnt.textContent = cnt;
+  var html = online.length
     ? online.map(function(u){
-        return '<div class="online-row" onclick="openProfile(\''+esc(u.username)+'\')">'
+        return '<div class="online-row" onclick="openProfile(\'' + esc(u.username) + '\')">'
           +'<div style="position:relative;display:inline-block">'
             +'<div class="av" style="width:30px;height:30px;font-size:14px;background:'+getAvBg(u.username,u)+'">'+getAvEmoji(u.username,u)+'</div>'
             +'<div style="position:absolute;bottom:0;right:0;width:9px;height:9px;background:var(--green);border-radius:50%;border:2px solid var(--surface)"></div>'
@@ -1500,7 +1550,25 @@ function renderOnline(){
           +'</div>';
       }).join('')
     : '<div style="padding:12px;font-size:12px;color:var(--muted)">Şu an kimse çevrimiçi değil.</div>';
+  document.getElementById('onlineList').innerHTML = html;
+  var mList = document.getElementById('onlineListMobile');
+  if(mList){
+    mList.innerHTML = online.length
+      ? online.map(function(u){
+          return '<div style="display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;flex-shrink:0" onclick="openProfile(\'' + esc(u.username) + '\')">'
+            +'<div style="position:relative">'
+              +'<div class="av" style="width:38px;height:38px;font-size:17px;background:'+getAvBg(u.username,u)+'">'+getAvEmoji(u.username,u)+'</div>'
+              +'<div style="position:absolute;bottom:0;right:0;width:10px;height:10px;background:var(--green);border-radius:50%;border:2px solid var(--surface)"></div>'
+            +'</div>'
+            +'<div style="font-size:9px;color:var(--muted);max-width:40px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center">'+esc(u.username)+'</div>'
+            +'</div>';
+        }).join('')
+      : '<div style="padding:8px;font-size:12px;color:var(--muted)">Kimse çevrimiçi değil</div>';
+  }
+  var bar = document.getElementById('mobileOnlineBar');
+  if(bar){ bar.style.display = window.innerWidth <= 900 ? 'block' : 'none'; }
 }
+
 function renderLeaderboard(){
   var sorted = allUsers.filter(function(u){ return u.showOnLeaderboard!==false; }).slice().sort(function(a,b){
     return ((b.postCount||0)*3+(b.likeCount||0)*2+(b.commentCount||0)) - ((a.postCount||0)*3+(a.likeCount||0)*2+(a.commentCount||0));
@@ -2780,3 +2848,4 @@ async function adminQuickDelPost(pid){
 <div class="toast-wrap" id="toastWrap"></div>
 </body>
 </html>
+
